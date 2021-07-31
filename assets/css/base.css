@@ -1,0 +1,167 @@
+:root {
+    --white-color : #fff;
+    --black-color : #000;
+    --text-color : #333;
+    --primary-color: #ff6333;
+    --favorite-color: #f25220;
+    --height-header : 120px;
+    --height-navbar : 25px;
+    --height-search : calc(var(--height-header) - var(--height-navbar) );
+    --height-favorite: 16px;
+}
+*{
+    /* kế thừ box cha */
+    box-sizing: border-box; 
+}
+html {
+    /* chuyển 1 rem thành 10px */
+    font-size: 62.5%;
+    line-height: 1.6rem;
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+    
+}
+/* grid */
+.grid {
+    width: 100%;
+    display: block;
+    padding: 0;
+    /* khúc này là chưa làm responsive nha */
+}
+.grid.wide{
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.row{
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -6px;
+    margin-right: -6px;
+}
+.col {
+    padding-left: 6px;
+    padding-right: 6px;
+}
+
+.l-0{
+    display: none;
+}
+.l-1 {
+    flex: 0 0 8.33333%;
+    max-width: 8.33333%;
+}
+.l-2 {
+    flex: 0 0 16.66667%;
+    max-width: 16.66667%;
+}
+.l-3{
+    flex: 0 0 25%;
+    max-width: 25%;
+}
+.l-9 {
+    flex: 0 0 75%;
+    max-width: 75%;
+}
+.l-10 {
+    flex: 0 0 83.33333%;
+    max-width: 83.33333%;
+}
+.l-10-2{
+    flex: 0 0 20%;
+    max-width: 20%;
+}
+/*  */
+/* modal */
+.modal--hidden{
+    display: none;
+}
+.modal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+}
+
+.modal__overlay{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    position: absolute;
+    animation: in linear 0.1s;
+}
+
+.modal__body{
+    --grow-from: 0.6;
+    --grow-to: 1;
+    z-index: 1;
+    background-color: var(--white-color);
+    margin: auto;
+    border-radius: 5px;
+    animation: grow linear 0.1s;
+    width: 500px;
+}
+@keyframes in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+@keyframes grow {
+    from {
+        transform: scale(var(--grow-from));
+    }
+    to {
+        transform: scale(var(--grow-to));
+    }
+}
+/*  */
+
+@keyframes popover-hide-animation {
+    0% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        opacity: 1;
+    }
+    to {
+        -webkit-transform: scale(0);
+        transform: scale(0);
+        opacity: 0;
+    }
+}
+
+@keyframes popover-enter-animation {
+    0% {
+        -webkit-transform: scale(0);
+        transform: scale(0);
+        opacity: 0;
+    }
+    to {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/*  */
+.btn {
+    width: 142px;
+    height: 34px;
+    border: none;
+    border-radius: 4px ;
+    font-size: 1.4rem;
+    cursor: pointer
+}
+
+.btn--primary {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+}
+.btn-hover:hover{
+    background-color: #999;
+    color: var(--white-color);
+}
+
